@@ -1,8 +1,13 @@
 module RDObjectMapping
+
+  class RDMappingPropertyType
+    include Ruby::Enum
+
+    define :STRING, :string
+    define :NUMBER, :number
+  end
+
   class RDMappingProperty
-
-    enum type: [ :string, :number ]
-
     attr_accessor :key, :type, :value, :description
 
     def initialize(key, type, value, description)
