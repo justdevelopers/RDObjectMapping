@@ -1,3 +1,5 @@
+require 'ruby-enum'
+
 module RDObjectMapping
 
   class RDMappingPropertyType
@@ -31,3 +33,4 @@ module RDObjectMapping
     end
   end
 end
+
