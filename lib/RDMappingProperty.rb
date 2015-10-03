@@ -10,13 +10,13 @@ module RDObjectMapping
   end
 
   class RDMappingProperty
-    attr_accessor :key, :type, :value, :description
+    attr_accessor :key, :type, :value, :desc
 
-    def initialize(key, type, value, description)
+    def initialize(key, type, value, desc)
       @key = key
       @type = type
       @value = value
-      @description = description
+      @desc = desc
     end
 
     def to_json(*a)
@@ -24,12 +24,12 @@ module RDObjectMapping
           key: @key,
           type: @type,
           value: @value,
-          description: @description
+          desc: @desc
       }.to_json(*a)
     end
 
     def self.json_create(o)
-      new(o[:key], o[:type], o[:value], o[:description])
+      new(o[:key], o[:type], o[:value], o[:desc])
     end
   end
 end
