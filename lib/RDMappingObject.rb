@@ -13,7 +13,11 @@ module RDObjectMapping
     end
 
     def self.json_create(o)
-      new(o[:properties])
+      properties = o[:properties].map do |property|
+        RDMappingProperty.json_create(property)
+      end
+
+      new(properties)
     end
   end
 end
